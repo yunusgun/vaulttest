@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: github-repo-2
+  namespace: default
+  annotations:
+    avp.kubernetes.io/path: "secret/data/github"  
+type: Opaque
+stringData:
+  url: <url>
+  username: <username>
+  password: <password>
