@@ -4,9 +4,9 @@ metadata:
   name: github-repo
   namespace: default
   annotations:
-    avp.kubernetes.io/path: "secret/github"
+    avp.kubernetes.io/path: "secret/data/github"  
 type: Opaque
 stringData:
-  url: "https://github.com/yunusgun/idp.git"
-  username: "git"
-  password: '{{ vault("secret/data/github#token") }}'
+  url: <url>
+  username: <username>
+  password: <password>
