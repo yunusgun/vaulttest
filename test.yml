@@ -1,13 +1,12 @@
 apiVersion: v1
 kind: Secret
-
 metadata:
-  namespace: default
   name: github-repo
+  namespace: default
   annotations:
     avp.kubernetes.io/path: "secret/github"
 type: Opaque
 stringData:
-  url: "https://github.com/<kullanici>/<repo>.git"
+  url: "https://github.com/yunusgun/idp.git"
   username: "git"
   password: '{{ vault("secret/data/github#token") }}'
