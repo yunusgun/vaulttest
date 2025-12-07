@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: github-repo
+  namespace: argocd
+  annotations:
+    avp.kubernetes.io/path: "secret/github"
+type: Opaque
+stringData:
+  url: "https://github.com/<kullanici>/<repo>.git"
+  username: "git"
+  password: '{{ vault("secret/data/github#token") }}'
