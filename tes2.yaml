@@ -3,10 +3,13 @@ kind: Secret
 metadata:
   name: github-repo-2
   namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository   
   annotations:
-    avp.kubernetes.io/path: "secret/data/github"  
+    avp.kubernetes.io/path: "secret/data/github"   
 type: Opaque
 stringData:
-  url: https://github.com/yunusgun/idp.git
-  username: <path:secret/data/github#username>
-  token: <path:secret/data/github#token>
+  type: git                                          
+  url: https://github.com/yunusgun/idp.git          
+  username: <path:secret/data/github#username>       
+  password: <path:secret/data/github#token>         
