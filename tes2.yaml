@@ -7,6 +7,6 @@ metadata:
     avp.kubernetes.io/path: "secret/data/github"  
 type: Opaque
 stringData:
-  url: <url>
-  username: <username>
-  password: <password>
+  url: https://github.com/yunusgun/idp.git
+  username: <path:secret/data/github#username>
+  token: <path:secret/data/github#token>
